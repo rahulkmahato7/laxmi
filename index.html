@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laxmi Enterprises Limited | Malangawa</title>
+<meta name="description" content="Laxmi Enterprises Limited - Electronics and home appliances store in Malangawa-10, Sarlahi, Nepal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0C284D;
+  --navy-dark:#061B36;
+  --navy-light:#163C68;
+  --gold:#D6A62E;
+  --gold-light:#F1D47A;
+  --teal:#087D8B;
+  --white:#fff;
+  --off:#F7F9FC;
+  --text:#243447;
+  --muted:#697586;
+  --border:#E1E7EE;
+  --shadow:0 15px 45px rgba(12,40,77,.10);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:var(--text);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+.topbar{background:var(--navy-dark);color:#fff;font-size:12px}
+.topbar-inner{min-height:38px;display:flex;align-items:center;justify-content:space-between}
+.topbar-right{display:flex;gap:20px}
+.topbar a:hover{color:var(--gold-light)}
+
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.navbar{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:64px;height:64px;object-fit:contain}
+.brand-text strong{display:block;color:var(--navy);font-size:18px;font-weight:800}
+.brand-text span{display:block;color:var(--muted);font-size:10px}
+nav{display:flex;align-items:center;gap:27px}
+nav a{color:var(--navy);font-size:13px;font-weight:600}
+nav a:hover{color:var(--teal)}
+.nav-contact{color:#fff!important;background:var(--navy);padding:11px 18px;border-radius:9px}
+.nav-contact:hover{background:var(--teal)}
+.menu-btn{display:none;border:0;background:none;color:var(--navy);font-size:26px;cursor:pointer}
+
+.hero{overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(214,166,46,.13),transparent 28%),radial-gradient(circle at 5% 90%,rgba(8,125,139,.08),transparent 30%),var(--off);padding:95px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;color:var(--navy);background:#fff;border:1px solid var(--border);padding:8px 13px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:22px}
+.hero-label span{width:7px;height:7px;background:var(--gold);border-radius:50%}
+.hero h1{color:var(--navy);font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-3px;margin-bottom:22px}
+.hero h1 em{color:var(--teal);font-style:normal}
+.hero p{max-width:580px;color:var(--muted);font-size:16px;margin-bottom:30px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:9px;font-size:13px;font-weight:700;transition:.25s}
+.btn-primary{color:#fff;background:var(--navy);box-shadow:0 10px 25px rgba(12,40,77,.18)}
+.btn-primary:hover{background:var(--teal);transform:translateY(-2px)}
+.btn-outline{color:var(--navy);background:#fff;border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--gold)}
+
+.hero-visual{position:relative;min-height:430px}
+.hero-card{position:absolute;background:#fff;border-radius:24px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden}
+.hero-main-card{width:78%;right:0;top:10px;padding:10px;transform:rotate(2deg)}
+.hero-main-card img{width:100%;height:350px;object-fit:cover;border-radius:17px}
+.hero-small-card{width:42%;left:0;bottom:5px;padding:9px;transform:rotate(-4deg);z-index:2}
+.hero-small-card img{width:100%;height:170px;object-fit:cover;border-radius:15px}
+.hero-badge{position:absolute;right:0;bottom:20px;z-index:3;color:#fff;background:var(--navy);padding:14px 17px;border-radius:11px;font-size:11px;font-weight:700;box-shadow:var(--shadow)}
+
+.trust{background:#fff;border-bottom:1px solid var(--border)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{min-height:88px;display:flex;align-items:center;gap:12px;padding:18px;border-right:1px solid var(--border)}
+.trust-item:last-child{border-right:0}
+.trust-icon{width:42px;height:42px;display:grid;place-items:center;flex-shrink:0;color:var(--navy);background:#EDF3F8;border-radius:11px}
+.trust-item strong{display:block;color:var(--navy);font-size:12px}
+.trust-item span{display:block;color:var(--muted);font-size:10px}
+
+section{padding:85px 0}
+.section-heading{max-width:650px;text-align:center;margin:0 auto 45px}
+.section-heading small{color:var(--teal);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px}
+.section-heading h2{color:var(--navy);font-size:clamp(29px,4vw,42px);line-height:1.1;letter-spacing:-1.5px;margin:8px 0 12px}
+.section-heading p{color:var(--muted);font-size:13px}
+
+.category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.category{text-align:center;padding:24px 12px;background:#fff;border:1px solid var(--border);border-radius:15px;transition:.25s}
+.category:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:var(--shadow)}
+.category-icon{width:58px;height:58px;display:grid;place-items:center;margin:0 auto 13px;color:var(--navy);background:#EEF4F8;border-radius:15px;font-size:24px}
+.category strong{display:block;color:var(--navy);font-size:12px}
+.category span{color:var(--muted);font-size:10px}
+
+.products{background:var(--off)}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{overflow:hidden;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:.25s}
+.product:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.product-image{position:relative;padding:10px;background:#F1F4F7}
+.product-image img{width:100%;height:215px;object-fit:cover;border-radius:12px}
+.product-tag{position:absolute;top:20px;left:20px;color:#fff;background:var(--teal);padding:5px 8px;border-radius:5px;font-size:9px;font-weight:800}
+.product-info{padding:17px}
+.product-category{color:var(--teal);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.product h3{color:var(--navy);font-size:15px;margin:5px 0 8px}
+.product-description{color:var(--muted);font-size:11px;margin-bottom:13px}
+.product-btn{width:100%;padding:10px;color:var(--navy);background:#fff;border:1px solid var(--border);border-radius:8px;font-size:11px;font-weight:700;cursor:pointer}
+.product-btn:hover{color:#fff;background:var(--navy);border-color:var(--navy)}
+
+.promotion{padding-top:0;background:var(--off)}
+.promotion-box{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:48px;color:#fff;background:radial-gradient(circle at 90% 20%,rgba(214,166,46,.22),transparent 30%),var(--navy);border-radius:24px}
+.promotion-box small{color:var(--gold-light);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.promotion-box h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px;margin:7px 0}
+.promotion-box p{color:#C7D2DF;font-size:13px}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{padding:28px;border:1px solid var(--border);border-radius:var(--radius);transition:.25s}
+.service:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-icon{width:50px;height:50px;display:grid;place-items:center;margin-bottom:17px;color:var(--navy);background:#EEF4F8;border-radius:12px;font-size:20px}
+.service h3{color:var(--navy);font-size:16px;margin-bottom:7px}
+.service p{color:var(--muted);font-size:12px}
+
+.about{background:var(--off)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:70px}
+.about-image{position:relative}
+.about-image img{width:100%;height:430px;object-fit:cover;border-radius:23px;box-shadow:var(--shadow)}
+.about-card{position:absolute;right:-15px;bottom:25px;padding:17px 20px;background:#fff;border-radius:13px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.about-card strong{display:block;color:var(--navy);font-size:18px}
+.about-card span{color:var(--muted);font-size:10px}
+.about-content small{color:var(--teal);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.about-content h2{color:var(--navy);font-size:clamp(30px,4vw,43px);line-height:1.1;letter-spacing:-1.5px;margin:10px 0 18px}
+.about-content p{color:var(--muted);font-size:13px;margin-bottom:16px}
+.checks{display:grid;gap:10px;margin:22px 0}
+.check{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:12px;font-weight:600}
+.check span{width:21px;height:21px;display:grid;place-items:center;color:#fff;background:var(--teal);border-radius:50%;font-size:10px}
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+.contact-info{padding:35px;color:#fff;background:var(--navy);border-radius:22px}
+.contact-info h2{font-size:29px;letter-spacing:-1px;margin-bottom:7px}
+.contact-info>p{color:#B7C4D3;font-size:12px;margin-bottom:30px}
+.contact-item{display:flex;gap:13px;margin-bottom:22px}
+.contact-icon{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;background:rgba(255,255,255,.08);border-radius:10px}
+.contact-item strong{display:block;font-size:11px;margin-bottom:2px}
+.contact-item span,.contact-item a{color:#B7C4D3;font-size:11px}
+.contact-form{padding:35px;border:1px solid var(--border);border-radius:22px}
+.contact-form h3{color:var(--navy);font-size:21px;margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:15px}
+.field label{display:block;color:var(--navy);font-size:10px;font-weight:700;margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:12px;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:8px;outline:none;font-size:12px}
+.field textarea{height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,125,139,.08)}
+
+footer{color:#fff;background:var(--navy-dark);padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-logo img{width:58px;height:58px;object-fit:contain}
+.footer-logo strong{display:block;font-size:16px}
+.footer-logo span{display:block;color:#9DAFC1;font-size:9px}
+.footer-brand p{max-width:320px;color:#9DAFC1;font-size:11px;margin-top:14px}
+footer h4{font-size:12px;margin-bottom:15px}
+footer ul{display:grid;gap:9px;list-style:none}
+footer li,footer a{color:#9DAFC1;font-size:10px}
+footer a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#71869B;border-top:1px solid rgba(255,255,255,.08);font-size:9px}
+
+.whatsapp{position:fixed;right:22px;bottom:22px;width:54px;height:54px;display:grid;place-items:center;color:#fff;background:#25D366;border-radius:50%;font-size:22px;box-shadow:0 10px 25px rgba(37,211,102,.3);z-index:999;transition:.2s}
+.whatsapp:hover{transform:scale(1.08)}
+
+@media(max-width:1000px){
+  .category-grid{grid-template-columns:repeat(3,1fr)}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-content{text-align:center}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .hero-visual{max-width:650px;width:100%;margin:auto}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-image{max-width:650px;margin:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .topbar{display:none}
+  .navbar{min-height:70px}
+  .brand img{width:52px;height:52px}
+  .brand-text strong{font-size:15px}
+  nav{position:absolute;top:70px;left:0;width:100%;display:none;flex-direction:column;align-items:flex-start;gap:16px;padding:20px 4%;background:#fff;border-bottom:1px solid var(--border)}
+  nav.active{display:flex}
+  nav a{width:100%}
+  .nav-contact{text-align:center}
+  .menu-btn{display:block}
+  .hero{padding:65px 0}
+  .hero h1{font-size:44px;letter-spacing:-2px}
+  .hero-visual{min-height:340px}
+  .hero-main-card img{height:275px}
+  .hero-small-card img{height:130px}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item{border-bottom:1px solid var(--border)}
+  .trust-item:nth-child(2){border-right:0}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .service-grid{grid-template-columns:1fr}
+  .promotion-box{flex-direction:column;align-items:flex-start;padding:35px 25px}
+  .form-row{grid-template-columns:1fr}
+  section{padding:65px 0}
+}
+@media(max-width:500px){
+  .product-grid{grid-template-columns:1fr}
+  .hero h1{font-size:39px}
+  .hero-visual{min-height:285px}
+  .hero-main-card{width:76%}
+  .hero-main-card img{height:225px}
+  .hero-small-card{width:43%}
+  .hero-small-card img{height:100px}
+  .hero-badge{font-size:9px;padding:10px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column}
+  .contact-info,.contact-form{padding:25px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>📍 Malangawa-10, Sarlahi, Nepal</span>
+    <div class="topbar-right">
+      <a href="tel:+9779844033333">📞 9844033333</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="Laxmi Enterprises Limited Logo">
+      <div class="brand-text">
+        <strong>Laxmi Enterprises Limited</strong>
+        <span>Electronics & Home Appliances</span>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-contact">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-label"><span></span>Your Local Electronics Store</div>
+
+      <h1>Better Electronics.<br><em>Better Living.</em></h1>
+
+      <p>
+        Discover quality electronics, home appliances and everyday
+        technology at Laxmi Enterprises Limited, Malangawa-10, Sarlahi.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Explore Products →</a>
+        <a href="#contact" class="btn btn-outline">Visit Our Store</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card hero-main-card">
+        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=85" alt="Television">
+      </div>
+
+      <div class="hero-card hero-small-card">
+        <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=700&q=85" alt="Refrigerator">
+      </div>
+
+      <div class="hero-badge">Genuine Products • Trusted Service</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      <div><strong>Genuine Products</strong><span>Quality you can trust</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">₹</div>
+      <div><strong>Competitive Prices</strong><span>Value for your money</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⚙</div>
+      <div><strong>After-Sales Support</strong><span>Support when you need it</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚚</div>
+      <div><strong>Local Service</strong><span>Serving Malangawa & nearby</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-heading">
+      <small>Shop By Category</small>
+      <h2>Electronics for everyday life</h2>
+      <p>Explore electronics and home appliances available at Laxmi Enterprises.</p>
+    </div>
+
+    <div class="category-grid">
+      <a href="#products" class="category"><div class="category-icon">📺</div><strong>Televisions</strong><span>Smart TVs & more</span></a>
+      <a href="#products" class="category"><div class="category-icon">🧊</div><strong>Refrigerators</strong><span>Cooling solutions</span></a>
+      <a href="#products" class="category"><div class="category-icon">🧺</div><strong>Washing Machines</strong><span>Laundry appliances</span></a>
+      <a href="#products" class="category"><div class="category-icon">📱</div><strong>Mobiles</strong><span>Phones & accessories</span></a>
+      <a href="#products" class="category"><div class="category-icon">🔊</div><strong>Audio</strong><span>Speakers & sound</span></a>
+      <a href="#products" class="category"><div class="category-icon">⚡</div><strong>Home Appliances</strong><span>Everyday essentials</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-heading">
+      <small>Featured Products</small>
+      <h2>Find what you need</h2>
+      <p>Explore some of the electronics categories available at our store.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product">
+        <div class="product-image">
+          <span class="product-tag">TV</span>
+          <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=700&q=85" alt="Smart TV">
+        </div>
+        <div class="product-info">
+          <span class="product-category">Television</span>
+          <h3>Smart LED & Smart TVs</h3>
+          <p class="product-description">Modern entertainment for your home.</p>
+          <button class="product-btn" onclick="inquire('Smart TV')">Enquire on WhatsApp</button>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product-image">
+          <span class="product-tag">HOME</span>
+          <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=700&q=85" alt="Refrigerator">
+        </div>
+        <div class="product-info">
+          <span class="product-category">Refrigerator</span>
+          <h3>Refrigerators</h3>
+          <p class="product-description">Reliable cooling for your home.</p>
+          <button class="product-btn" onclick="inquire('Refrigerator')">Enquire on WhatsApp</button>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product-image">
+          <span class="product-tag">HOME</span>
+          <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=700&q=85" alt="Washing Machine">
+        </div>
+        <div class="product-info">
+          <span class="product-category">Washing Machine</span>
+          <h3>Washing Machines</h3>
+          <p class="product-description">Make everyday laundry easier.</p>
+          <button class="product-btn" onclick="inquire('Washing Machine')">Enquire on WhatsApp</button>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product-image">
+          <span class="product-tag">AUDIO</span>
+          <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=85" alt="Speaker">
+        </div>
+        <div class="product-info">
+          <span class="product-category">Audio</span>
+          <h3>Speakers & Audio</h3>
+          <p class="product-description">Bring better sound into your home.</p>
+          <button class="product-btn" onclick="inquire('Speaker or Audio Product')">Enquire on WhatsApp</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="promotion">
+  <div class="container">
+    <div class="promotion-box">
+      <div>
+        <small>Visit Laxmi Enterprises</small>
+        <h2>Looking for a new appliance?</h2>
+        <p>Contact us for product availability, current prices and offers.</p>
+      </div>
+      <a href="tel:+9779844033333" class="btn" style="background:#D6A62E;color:#0C284D">Call 9844033333 →</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-heading">
+      <small>Our Services</small>
+      <h2>Service you can rely on</h2>
+      <p>We aim to make your purchase and ownership experience simple and convenient.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service">
+        <div class="service-icon">🚚</div>
+        <h3>Local Delivery</h3>
+        <p>Convenient delivery options for customers in Malangawa and surrounding areas.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon">🔧</div>
+        <h3>Installation Support</h3>
+        <p>Assistance with installation and setup for selected electronics and appliances.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon">🛡️</div>
+        <h3>After-Sales Support</h3>
+        <p>Assistance with warranty and service-related requirements after your purchase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1601972602237-8c79241e468b?auto=format&fit=crop&w=1000&q=85" alt="Electronics store">
+      <div class="about-card"><strong>Malangawa-10</strong><span>Sarlahi, Nepal</span></div>
+    </div>
+
+    <div class="about-content">
+      <small>About Us</small>
+      <h2>Your local electronics destination.</h2>
+      <p>Laxmi Enterprises Limited is located at Malangawa-10, Sarlahi, Nepal.</p>
+      <p>We provide electronics and home appliances for customers looking for quality products, convenient service and dependable local support.</p>
+
+      <div class="checks">
+        <div class="check"><span>✓</span>Quality electronics</div>
+        <div class="check"><span>✓</span>Customer-focused service</div>
+        <div class="check"><span>✓</span>Local presence in Malangawa</div>
+        <div class="check"><span>✓</span>After-sales assistance</div>
+      </div>
+
+      <a href="#contact" class="btn btn-primary">Contact Us →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <small>Contact Us</small>
+      <h2>Visit or contact us</h2>
+      <p>Get in touch for products, prices, availability and enquiries.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h2>Laxmi Enterprises</h2>
+        <p>Electronics & Home Appliances</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><strong>Address</strong><span>Malangawa-10, Sarlahi, Nepal</span></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><strong>Phone</strong><a href="tel:+9779844033333">9844033333</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><strong>Visit Us</strong><span>Malangawa-10, Sarlahi</span></div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <h3>Send an enquiry</h3>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="Your phone number" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>What are you looking for?</label>
+          <textarea id="message" placeholder="Tell us about the product you need..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send via WhatsApp →</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Laxmi Enterprises Limited">
+          <div>
+            <strong>Laxmi Enterprises Limited</strong>
+            <span>Electronics & Home Appliances</span>
+          </div>
+        </div>
+        <p>Your local electronics store in Malangawa-10, Sarlahi, Nepal.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products">Televisions</a></li>
+          <li><a href="#products">Refrigerators</a></li>
+          <li><a href="#products">Washing Machines</a></li>
+          <li><a href="#products">Audio</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Malangawa-10</li>
+          <li>Sarlahi, Nepal</li>
+          <li><a href="tel:+9779844033333">9844033333</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Laxmi Enterprises Limited. All rights reserved.</span>
+      <span>Malangawa-10, Sarlahi, Nepal</span>
+    </div>
+
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/9779844033333" target="_blank" aria-label="Contact Laxmi Enterprises on WhatsApp">☎</a>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+
+document.querySelectorAll("#nav a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    document.getElementById("nav").classList.remove("active");
+  });
+});
+
+function inquire(product){
+  const phone="9779844033333";
+  const message=`Namaste Laxmi Enterprises, I am interested in ${product}. Please provide availability and price.`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,"_blank");
+}
+
+function sendMessage(event){
+  event.preventDefault();
+
+  const name=document.getElementById("name").value;
+  const phone=document.getElementById("phone").value;
+  const message=document.getElementById("message").value;
+
+  const text=`Namaste Laxmi Enterprises,
+
+Name: ${name}
+Phone: ${phone}
+
+Enquiry:
+${message}`;
+
+  window.open(
+    `https://wa.me/9779844033333?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
